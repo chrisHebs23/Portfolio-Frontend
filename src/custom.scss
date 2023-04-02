@@ -80,6 +80,7 @@ p {
 .card-img {
   border-radius: 1.875rem;
   background-color: $card-bg;
+  --bs-card-border-width: 0px;
 }
 
 .card-height {
@@ -88,13 +89,15 @@ p {
 
 .image-gradient {
   background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 70.81%);
-
   overflow: hidden;
-  transform: scale(1.01);
 }
 
 .card-padding {
   padding: 0.938rem;
+}
+
+.hero-card-text {
+  width: 75%;
 }
 
 @media only screen and (max-width: 576px) {
@@ -126,6 +129,10 @@ p {
 }
 
 @media only screen and (max-width: 992px) {
+  .container {
+    max-width: 932px;
+  }
+
   .card-height {
     height: auto;
     min-height: 20rem;
@@ -143,6 +150,9 @@ p {
 }
 
 @media only screen and (max-width: 1220px) {
+  .container {
+    max-width: 1160px;
+  }
 }
 
 // Then add additional custom code here

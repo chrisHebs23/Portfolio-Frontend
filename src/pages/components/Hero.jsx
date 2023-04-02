@@ -16,11 +16,11 @@ const Hero = () => {
       {/* <Card.Img src={hero_img} alt="Chris Heberden " /> */}
       <Card.ImgOverlay className="h-100 d-flex flex-column justify-content-end card-padding ">
         <Card.Title className="fw-bolder hero-title">
-          Hi, I am Chris Heberden, Web developer, designer and dreamer
+          Hi, I am Chris Heberden, web developer, designer and dreamer
         </Card.Title>
-        <Card.Text className="lh-base">
-          Building Engaging and Functional Websites for Your Business. Hire Me
-          Today!
+        <Card.Text className="lh-base hero-card-text">
+          Building engaging and functional websites for your business. Hire me
+          today!
         </Card.Text>
         <div className="w-full">
           <MainBtn />

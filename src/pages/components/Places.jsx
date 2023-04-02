@@ -15,7 +15,10 @@ const Places = () => {
     <Card className="p-0">
       <Carousel>
         {places.map((place) => (
-          <Carousel.Item className="card-height card-carousel w-100">
+          <Carousel.Item
+            key={place.name}
+            className="card-height card-carousel w-100"
+          >
             <div
               className="card-height card-carousel rounded-5 "
               style={{
