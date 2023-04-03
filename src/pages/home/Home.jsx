@@ -3,29 +3,32 @@ import { Col, Container, Row } from "react-bootstrap";
 import About from "../components/About";
 import Hero from "../components/Hero";
 import Places from "../components/Places";
+import Skills from "../components/Skills";
 
 const Home = () => {
   return (
-    <div>
-      <Row>
+    <div className="mb-5">
+      <Row className="mb-3">
         <Col xl={7} lg={6} md={7} sm={12} className="mb-3">
           <Hero />
         </Col>
         <Col xl={5} lg={6} md={5} sm={12} className="mb-3 ">
-          <Container className="m-0 p-0 w-100">
-            <Row className="info-row w-100">
-              <Col className="mb-3 w-100">
+          <div>
+            <Row className="info-row ">
+              <Col className="mb-3">
                 <About />
               </Col>
               <Col className="mb-3 w-100">
                 <Places />
               </Col>
             </Row>
-          </Container>
+          </div>
         </Col>
       </Row>
       <Row>
-        <Col></Col>
+        <Col>
+          <Skills />
+        </Col>
       </Row>
     </div>
   );
