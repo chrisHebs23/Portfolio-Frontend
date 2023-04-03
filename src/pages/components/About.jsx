@@ -4,7 +4,7 @@ import MainBtn from "../../common/main-btn";
 
 const About = () => {
   return (
-    <Card className="card-padding card-height">
+    <Card className="card-padding card-height w-100">
       <Card.Title>About Me</Card.Title>
       <Card.Text>
         I am South African living in America. I am on a journey to build and
