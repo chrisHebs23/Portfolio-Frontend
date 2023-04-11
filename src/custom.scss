@@ -8,6 +8,10 @@ $primary: #86c232;
 $secondary: #61892f;
 $card-bg: #222629;
 
+.min-h-project {
+  min-height: 34.375rem;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Montserrat:wght@400;700;900&family=Roboto&display=swap");
 
 h1,
@@ -20,6 +24,7 @@ h5 {
 
 h3 {
   font-size: 1.875rem;
+  font-weight: 700;
 }
 
 p {
@@ -27,7 +32,30 @@ p {
   font-size: 1.375rem;
   font-weight: 400;
 }
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+body::-webkit-scrollbar {
+  width: 0.313rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: none;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.nav-link {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.375rem;
+}
+.navbar-nav .show > .nav-link,
+.navbar-nav .nav-link.active {
+  color: $primary;
+}
 
 .btn {
   border-radius: 3.125rem;
@@ -65,15 +93,8 @@ p {
   font-size: 2.5rem;
 }
 
-// .card {
-//   height: 100%;
-//   min-height: 18.75rem;
-//   max-height: 45rem;
-// }
-
 .hero-card {
   min-height: 50rem;
-  max-height: 55rem;
 }
 
 .card,
@@ -105,6 +126,142 @@ p {
   flex-direction: column;
 }
 
+.container {
+  max-width: 75rem;
+}
+
+.skill-box p {
+  margin-bottom: 0 !important;
+}
+
+.skill-box {
+  max-height: 100px;
+}
+
+.image-card {
+  max-height: 13.125rem;
+  height: 100%;
+  cursor: pointer;
+}
+.icons {
+  height: 6rem;
+  // width: 6.25rem;
+}
+
+.navbar-toggler {
+  display: flex;
+  justify-self: end;
+}
+
+.w-33 {
+  width: 32%;
+}
+
+#projects {
+  overflow-x: scroll;
+  overflow-y: hidden !important;
+  display: flex;
+  position: relative;
+  gap: 0.9rem;
+  margin: 1.2rem 0;
+  // flex-wrap: wrap;
+}
+
+#projects::-webkit-scrollbar,
+.skills::-webkit-scrollbar {
+  width: 2px;
+}
+
+#projects::-webkit-scrollbar-track,
+.skills::-webkit-scrollbar-track {
+  background: none;
+}
+
+#projects::-webkit-scrollbar-thumb,
+.skills::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.project {
+  min-height: 34.375rem;
+  color: white;
+  text-align: center;
+  align-items: center;
+  transition: transform 0.2s, flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+    background 0.2s;
+  font-size: 20px;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  flex: 1;
+
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 1.875rem;
+  .project-sub {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    background: linear-gradient(
+      50.71deg,
+      #000000 6.21%,
+      rgba(0, 0, 0, 0) 39.13%
+    );
+    padding: 0.938rem;
+  }
+}
+
+.project:hover {
+  flex-basis: 100%;
+  transition: transform 0.2s, flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+    background 0.2s;
+  margin: 0 auto;
+  .project-sub {
+    visibility: visible;
+  }
+}
+
+.proj-hove {
+  transition: transform 0.2s ease-in-out;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.bg-proj {
+  background: linear-gradient(0deg, #000000 7.21%, rgba(0, 0, 0, 0) 45.13%);
+}
+// .proj-hove:hover {
+//   transform: scale(1.02);
+// }
+
+.info {
+  transform: translateY(30%);
+  opacity: 0;
+  z-index: 0;
+  transition: transform 0.3s ease-in-out;
+  will-change: opacity, transform;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 24px;
+  color: white;
+}
+
+.visible-info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 @media only screen and (max-width: 576px) {
   .card {
     width: 100%;
@@ -122,7 +279,7 @@ p {
     overflow: visible;
   }
   .card-padding {
-    padding: 0.438rem;
+    padding: 0.6rem;
   }
   .btn {
     padding: 0.425rem 0.738rem;
@@ -131,13 +288,35 @@ p {
     max-width: 10.5rem;
     min-width: 7.375rem;
   }
-}
-
-.skill-box {
-  max-height: 120px;
+  h3 {
+    font-size: 1.8rem;
+  }
 }
 
 @media only screen and (max-width: 768px) {
+  #projects {
+    height: 30rem;
+    overflow: scroll;
+    padding-bottom: 0.7rem;
+  }
+  .project {
+    flex-basis: 100%;
+    min-width: 100%;
+    .project-sub {
+      visibility: visible;
+    }
+  }
+  .icons {
+    height: 5rem;
+  }
+  .icon-box {
+    min-width: 6.2rem;
+  }
+  .toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -158,6 +337,16 @@ p {
   }
   .card-text {
     font-size: 1.2rem;
+  }
+  .projects {
+    min-height: 21.875rem;
+    scrollbar-gutter: auto;
+    scroll-behavior: smooth;
+    scrollbar-color: $primary !important;
+  }
+
+  .project {
+    background-position: left !important;
   }
 }
 

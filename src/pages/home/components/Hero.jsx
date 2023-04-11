@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-import hero_img from "../../assets/images/hero.jpg";
-import MainBtn from "../../common/main-btn";
+import MainBtn from "../../../common/main-btn";
+import hero_img from "../../../assets/images/hero.jpg";
 
 const Hero = () => {
   return (
@@ -23,7 +23,7 @@ const Hero = () => {
           today!
         </Card.Text>
         <div className="w-full">
-          <MainBtn />
+          <MainBtn text="Hire me" />
           <Button className="btn outline-primary">Portfolio</Button>
         </div>
       </Card.ImgOverlay>

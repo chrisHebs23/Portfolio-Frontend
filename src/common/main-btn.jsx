@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-const MainBtn = () => {
-  return <Button className="btn main-btn me-3">Hire me</Button>;
+const MainBtn = ({ text }) => {
+  return <Button className="btn main-btn me-3">{text}</Button>;
 };
 
 export default MainBtn;

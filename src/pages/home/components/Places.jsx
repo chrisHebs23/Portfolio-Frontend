@@ -1,8 +1,8 @@
 import React from "react";
 import { Card, Carousel } from "react-bootstrap";
-import place_1 from "../../assets/images/place_1.jpg";
-import place_2 from "../../assets/images/place_2.jpg";
-import place_3 from "../../assets/images/place_3.jpg";
+import place_1 from "../../../assets/images/place_1.jpg";
+import place_2 from "../../../assets/images/place_2.jpg";
+import place_3 from "../../../assets/images/place_3.jpg";
 
 const Places = () => {
   const places = [

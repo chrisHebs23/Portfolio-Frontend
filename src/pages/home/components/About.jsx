@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import MainBtn from "../../common/main-btn";
+import MainBtn from "../../../common/main-btn";
 
 const About = () => {
   return (
@@ -12,7 +12,7 @@ const About = () => {
         have the same goal in mind do not hesitate to message me and we can help
         each other out.
       </Card.Text>
-      <MainBtn />
+      <MainBtn text="Hire me" />
     </Card>
   );
 };
