@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import useAxios from "../../hooks/useAxios";
 import { Container, Row } from "react-bootstrap";
 import MainBtn from "../../common/main-btn";
+import ProjectCarousel from "./components/ProjectCarousel";
 
 const Project = () => {
   const { id } = useParams();
@@ -21,18 +22,25 @@ const Project = () => {
       <Row>
         <h2>{project.title}</h2>
         <div>
-          <img src={project.imageUrl} alt={project.title} className="w-100" />
-          <p>{project.description}</p>
+          <img
+            src={project.imageUrl}
+            alt={project.title}
+            className="w-100 rounded"
+          />
+          <p className="my-3">{project.description}</p>
           <a
             href={project.websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
+            className="my-3"
           >
             <MainBtn text="Visit site" />
           </a>
         </div>
       </Row>
-      <Row></Row>
+      <Row>
+        <ProjectCarousel />
+      </Row>
     </div>
   );
 };

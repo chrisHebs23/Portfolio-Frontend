@@ -14,7 +14,7 @@ const Header = () => {
           <div>
             <Navbar.Brand>
               <Link to="/">
-                <img src={logo} alt="CH logo" />
+                <img src={logo} alt="CH logo" loading="lazing" />
               </Link>
             </Navbar.Brand>
           </div>
