@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useAxios from "../../hooks/useAxios";
-import { Container, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import MainBtn from "../../common/main-btn";
 import ProjectCarousel from "./components/ProjectCarousel";
 
 const Project = () => {
   const { id } = useParams();
-  const { response, error, isLoading } = useAxios({ params: `project/${id}` });
+
+  const { response, error, isLoading } = useAxios({
+    params: `project/${id}`,
+  });
 
   const [project, setProjects] = useState([]);
 
@@ -15,18 +18,27 @@ const Project = () => {
     if (response !== null) {
       setProjects(response.project);
     }
-  }, [response]);
+    if (document.referrer !== window.location.href) {
+      window.location.reload();
+    }
+  }, [response, id, project._id]);
 
-  return (
+  return isLoading ? (
+    <p>Loading...</p>
+  ) : error ? (
+    <p>{error}</p>
+  ) : (
     <div>
       <Row>
         <h2>{project.title}</h2>
         <div>
-          <img
-            src={project.imageUrl}
-            alt={project.title}
-            className="w-100 rounded"
-          />
+          <div
+            className="image-container"
+            style={{
+              backgroundImage: `url(${project.imageUrl})`,
+              backgroundSize: "cover",
+            }}
+          ></div>
           <p className="my-3">{project.description}</p>
           <a
             href={project.websiteUrl}
@@ -39,7 +51,7 @@ const Project = () => {
         </div>
       </Row>
       <Row>
-        <ProjectCarousel />
+        <ProjectCarousel id={id} />
       </Row>
     </div>
   );

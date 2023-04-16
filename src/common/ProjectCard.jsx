@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Col } from "react-bootstrap";
 import ProjectBtns from "./project-buttons";
 
-const ProjectCard = ({ project, lg = 4, md = 6, sm = 12 }) => {
+const ProjectCard = ({ project }) => {
   const [visible, setVisible] = useState({});
 
   const handleClick = (id) => {
@@ -10,10 +10,10 @@ const ProjectCard = ({ project, lg = 4, md = 6, sm = 12 }) => {
   };
   return (
     <Col
-      lg={lg}
-      md={md}
-      sm={sm}
-      className="proj-hove mb-5 "
+      lg={4}
+      md={6}
+      sm={12}
+      className=" mb-3 "
       onClick={() => handleClick(project._id)}
       key={project._id}
     >
@@ -24,10 +24,10 @@ const ProjectCard = ({ project, lg = 4, md = 6, sm = 12 }) => {
           backgroundRepeat: "no-repeat",
           // backgroundPosition: "center",
         }}
-        className="min-h-project proj-hove h-100 position-relative rounded"
+        className="proj-hove min-h-project h-100 position-relative rounded"
       >
         <div
-          className={`info bg-proj w-100 d-flex flex-column justify-content-end align-items-start h-100 overflow-hidden ${
+          className={`info bg-proj w-100 d-flex flex-column justify-content-end align-items-start h-100  ${
             visible[project._id] && "visible-info"
           } `}
         >

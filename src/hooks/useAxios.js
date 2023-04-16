@@ -34,7 +34,7 @@ const useAxios = ({ params }) => {
     }
   }, []);
 
-  return { response, error, isLoading };
+  return { response, error, isLoading, getProjects };
 };
 
 export default useAxios;

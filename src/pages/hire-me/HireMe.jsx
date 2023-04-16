@@ -1,9 +1,11 @@
 import React from "react";
+import Animation from "./components/Animation";
 
 const HireMe = () => {
   return (
     <div>
-      <h1>Hire Me</h1>
+      <Animation />
+      <h2>Need a custom website built? I would love to help. </h2>
     </div>
   );
 };

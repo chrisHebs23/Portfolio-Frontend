@@ -1,8 +1,9 @@
 import MainBtn from "../../../common/main-btn";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ProjectBtns from "../../../common/project-buttons";
 import useAxios from "../../../hooks/useAxios";
+import ProjectCard from "../../../common/ProjectCard";
+import { Row } from "react-bootstrap";
 
 const Projects = () => {
   const { response, error, isLoading } = useAxios({ params: "project" });
@@ -17,30 +18,17 @@ const Projects = () => {
 
   return (
     <>
-      <div id="projects">
+      <Row className="projects d-flex flex-nowrap my-3 g-3  position-relative row-cols-md-3 mh-100%">
         {!isLoading ? (
           error ? (
             <div>{error}</div>
           ) : (
-            projects.map((project) => (
-              <div
-                className="project"
-                style={{
-                  background: `url(${project.imageUrl})`,
-                }}
-              >
-                <div className="project-sub">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <ProjectBtns url={project.websiteUrl} id={project._id} />
-                </div>
-              </div>
-            ))
+            projects.map((project) => <ProjectCard project={project} />)
           )
         ) : (
           <>Loading</>
         )}
-      </div>
+      </Row>
       {!error && !isLoading && (
         <div className="d-flex w-100 justify-content-center">
           <Link to="/portfolio">
