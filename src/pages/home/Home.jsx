@@ -9,11 +9,11 @@ import Projects from "./components/Projects";
 const Home = () => {
   return (
     <div>
-      <Row className="mb-3">
-        <Col xl={7} lg={6} md={7} sm={12}>
+      <Row className="mb-3 g-3">
+        <Col lg={6} md={7} sm={12}>
           <Hero />
         </Col>
-        <Col xl={5} lg={6} md={5} sm={12} className="">
+        <Col lg={6} md={5} sm={12} className="">
           <Row className="info-row mb-3">
             <Col className="mb-3">
               <About />

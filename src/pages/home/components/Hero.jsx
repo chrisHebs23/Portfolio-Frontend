@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Button } from "react-bootstrap";
 import MainBtn from "../../../common/main-btn";
 import hero_img from "../../../assets/images/hero.jpg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -21,9 +22,13 @@ const Hero = () => {
           Building engaging and functional websites for your business. Hire me
           today!
         </Card.Text>
-        <div className="w-full">
-          <MainBtn text="Hire me" />
-          <Button className="btn outline-primary">Portfolio</Button>
+        <div className="w-full ">
+          <Link to="/hire">
+            <MainBtn text="Hire me" />
+          </Link>
+          <Link to="/portfolio">
+            <Button className="btn outline-primary ms-3">Portfolio</Button>
+          </Link>
         </div>
       </Card.ImgOverlay>
     </Card>

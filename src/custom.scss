@@ -6,6 +6,8 @@ $body-color: #fff;
 
 $primary: #86c232;
 $secondary: #61892f;
+$grey: #474b4f;
+$lightGrey: #6b6e70;
 $card-bg: #222629;
 
 .min-h-project {
@@ -29,7 +31,7 @@ h3 {
 
 p {
   font-family: "Roboto", sans-serif;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   font-weight: 400;
 }
 
@@ -57,6 +59,10 @@ p {
   color: $primary;
 }
 
+.nav-btn {
+  margin-right: 0px !important;
+}
+
 .btn {
   border-radius: 3.125rem;
   padding: 0.625rem 0.938rem;
@@ -67,7 +73,11 @@ p {
 }
 
 .main-padding {
-  padding: 0.938rem;
+  padding: 0.625rem 0.938rem;
+}
+
+.nav-btn {
+  padding: 0.313rem;
 }
 
 .outline-primary {
@@ -84,9 +94,9 @@ p {
   font-weight: 700;
 }
 .card-text {
-  font-size: 1.375rem;
-  margin: 0.938rem 0 1.875rem 0;
-  line-height: 2.25rem;
+  font-size: 1.25rem;
+
+  line-height: 2rem;
 }
 
 .hero-title {
@@ -94,7 +104,7 @@ p {
 }
 
 .hero-card {
-  min-height: 50rem;
+  min-height: 100%;
 }
 
 .card,
@@ -105,7 +115,7 @@ p {
 }
 
 .card-height {
-  height: 24.063rem;
+  min-height: 20rem;
 }
 
 .image-gradient {
@@ -249,8 +259,6 @@ p {
 }
 
 .project-type-active {
-  // text-decoration: underline;
-  // text-decoration-color: $primary;
   text-underline-offset: 0.2rem;
   background-position: 100% 100%; /*OR bottom right*/
   background-size: 100% 2px;
@@ -260,8 +268,97 @@ p {
 }
 
 // animation
-.blur {
-  filter: blur(200px);
+.animation-container {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin-bottom: 1.875rem;
+}
+
+.background-blur {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 100%;
+  width: 80%;
+  height: 70%;
+  filter: blur(150px);
+  z-index: -1;
+  background: -webkit-linear-gradient(
+    to right,
+    #01a72b,
+    #86c232,
+    #a8e063,
+    #84ee95
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #01a72b,
+    #86c232,
+    #a8e063,
+    #84ee95
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: 300%;
+  background-position: left;
+  @keyframes move {
+    0% {
+      background-position: left;
+      transform: translate(0);
+    }
+    100% {
+      background-position: right;
+      transform: translate(50%, 50%);
+    }
+  }
+  animation: move 25s infinite alternate;
+}
+
+.form-box {
+  // background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 1.875rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+// Form
+
+.form-container {
+  background-color: $body-bg;
+  width: 100%;
+  height: 100%;
+}
+
+.form-btn {
+  background: none;
+  color: #fff;
+  border-radius: 0;
+  font-size: 1.125rem;
+
+  margin-right: 1.875rem;
+}
+
+.form-check-input[type="checkbox"] {
+  border-color: #fff;
+}
+
+.form-label {
+  font-size: 1.3rem;
+}
+
+.text-area {
+  resize: none;
+}
+
+.submit-btn {
+  border-radius: 0;
+}
+
+.error {
+  border-color: red;
 }
 
 @media only screen and (max-width: 576px) {
@@ -274,10 +371,12 @@ p {
   }
 
   .hero-card {
-    min-height: 35.625rem;
+    width: 100%;
+    flex: 1;
   }
   .card-height {
-    height: 25rem;
+    // height: 25rem;
+
     overflow: visible;
   }
   .card-padding {
@@ -307,6 +406,14 @@ p {
     flex-direction: column;
     align-items: flex-end;
   }
+  .form-box {
+    flex-wrap: wrap;
+  }
+  .hero-card {
+    height: 100%;
+    min-height: 31.25rem;
+    margin-bottom: 0.938rem;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -319,9 +426,13 @@ p {
   }
 
   .card-height {
-    height: auto;
-    min-height: 20rem;
+    min-height: 100%;
+    // min-height: 20rem;
   }
+
+  // .hero-card {
+  //   height: 100%;
+  // }
 
   .card-carousel {
     height: 22rem;

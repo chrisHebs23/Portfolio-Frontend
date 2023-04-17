@@ -8,9 +8,9 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <div className="w-100">
-      <Navbar expand="md" className="my-3" variant="dark">
-        <div className="w-100 d-flex flex-row justify-content-between">
+    <div className="w-100 mb-3">
+      <Navbar expand="md" className="my" variant="dark">
+        <div className="w-100 d-flex flex-row justify-content-between align-items-md-center ">
           <div>
             <Navbar.Brand>
               <Link to="/">
@@ -42,7 +42,7 @@ const Header = () => {
                   </Nav.Item>
                   <Nav.Item href="/hire">
                     <Nav.Link as={Link} to="/hire">
-                      <MainBtn text="Hire me" />
+                      <MainBtn text="Hire me" padding="nav-btn" />
                     </Nav.Link>
                   </Nav.Item>
                 </Nav>

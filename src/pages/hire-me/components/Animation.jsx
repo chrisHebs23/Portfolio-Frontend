@@ -2,11 +2,8 @@ import React from "react";
 
 const Animation = () => {
   return (
-    <div>
-      <div className="rounded blur bg-primary"></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div className="blob-container mb-3 ">
+      <div className="cover"></div>
     </div>
   );
 };
